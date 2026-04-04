@@ -51,4 +51,4 @@ This repository contains the R code for a systematic review and meta-analysis co
 
 ## License
 
-This project is for academic and research purposes.
+This project is for academic and research purposes. Originally done by DR Haider, all rights reserved to Dr. Haider Randhawa
