@@ -82,7 +82,7 @@ print(summary(meta_rr))
 pdf(file.path(out_dir, "Figure3_GTR_RR_forest.pdf"), width = 12, height = 8)
 forest(meta_rr,
        sortvar    = gtr$year,
-       xlim       = c(0.5, 5),
+       xlim       = c(0.5, 4),
        label.left = "Favors White Light", label.right = "Favors 5-ALA",
        lab.e = "5-ALA", lab.c = "White Light",
        leftcols  = c("studlab", "event.e", "n.e", "event.c", "n.c"),
@@ -105,10 +105,10 @@ cat("Saved: Figure3_GTR_RR_forest.pdf\n")
 meta_rr_sub <- update(meta_rr, subgroup = gtr$design, print.subgroup.name = TRUE)
 print(summary(meta_rr_sub))
 
-pdf(file.path(out_dir, "Figure4_GTR_RR_subgroup.pdf"), width = 12, height = 10)
+pdf(file.path(out_dir, "Figure4_GTR_RR_subgroup.pdf"), width = 12, height = 15)
 forest(meta_rr_sub,
        sortvar    = gtr$year,
-       xlim       = c(0.5, 5),
+       xlim       = c(0.5, 4),
        label.left = "Favors White Light", label.right = "Favors 5-ALA",
        lab.e = "5-ALA", lab.c = "White Light",
        leftcols  = c("studlab", "event.e", "n.e", "event.c", "n.c"),
@@ -118,7 +118,7 @@ forest(meta_rr_sub,
        test.subgroup.random = TRUE,
        col.diamond = "steelblue", col.diamond.random = "steelblue",
        col.diamond.common = "grey50",
-       fontsize = 12, spacing = 2.0, squaresize = 0.5,
+       fontsize = 12, spacing = 2.2, squaresize = 0.5,
        comb.fixed = FALSE,
        smlab = "Risk Ratio by Study Design")
 dev.off()
@@ -132,7 +132,7 @@ cat("Saved: Figure4_GTR_RR_subgroup.pdf\n")
 inf <- metainf(meta_rr, pooled = "random")
 print(inf)
 
-pdf(file.path(out_dir, "Figure5_LeaveOneOut.pdf"), width = 11, height = 7)
+pdf(file.path(out_dir, "Figure5_LeaveOneOut.pdf"), width = 11, height = 10)
 forest(inf,
        xlim       = c(0.8, 3),
        label.left = "Favors White Light", label.right = "Favors 5-ALA",
@@ -213,7 +213,7 @@ print(summary(meta_or))
 pdf(file.path(out_dir, "FigureS1_GTR_OR_forest.pdf"), width = 12, height = 8)
 forest(meta_or,
        sortvar    = gtr$year,
-       xlim       = c(0.3, 15),
+       xlim       = c(0.3, 10),
        label.left = "Favors White Light", label.right = "Favors 5-ALA",
        lab.e = "5-ALA", lab.c = "White Light",
        leftcols  = c("studlab", "event.e", "n.e", "event.c", "n.c"),
@@ -277,10 +277,10 @@ meta_rr_rob <- metabin(
 )
 print(summary(meta_rr_rob))
 
-pdf(file.path(out_dir, "FigureS3_Sensitivity_RoB.pdf"), width = 12, height = 6)
+pdf(file.path(out_dir, "FigureS3_Sensitivity_RoB.pdf"), width = 13, height = 6)
 forest(meta_rr_rob,
        sortvar    = gtr_rob$year,
-       xlim       = c(0.5, 5),
+       xlim       = c(0.5, 3),
        label.left = "Favors White Light", label.right = "Favors 5-ALA",
        lab.e = "5-ALA", lab.c = "White Light",
        leftcols  = c("studlab", "event.e", "n.e", "event.c", "n.c"),
@@ -290,7 +290,7 @@ forest(meta_rr_rob,
        col.diamond = "purple4",
        fontsize = 12, spacing = 2.0, squaresize = 0.5,
        comb.fixed = FALSE,
-       smlab = "RR - Low/Moderate RoB Studies Only")
+       smlab = "RR (Low/Moderate RoB)")
 dev.off()
 cat("Saved: FigureS3_Sensitivity_RoB.pdf\n")
 
@@ -302,7 +302,7 @@ cat("Saved: FigureS3_Sensitivity_RoB.pdf\n")
 pdf(file.path(out_dir, "FigureS4_GTR_RR_fixed.pdf"), width = 12, height = 8)
 forest(meta_rr,
        sortvar    = gtr$year,
-       xlim       = c(0.5, 12),
+       xlim       = c(0.5, 8),
        label.left = "Favors White Light", label.right = "Favors 5-ALA",
        lab.e = "5-ALA", lab.c = "White Light",
        leftcols  = c("studlab", "event.e", "n.e", "event.c", "n.c"),
